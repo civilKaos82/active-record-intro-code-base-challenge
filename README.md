@@ -1,4 +1,4 @@
-#Active Record Intro:  Code Base
+# Active Record Intro:  Code Base
 
 ## Summary
 This challenge introduces the code base with which we'll be working as we become acquainted with Active Record, the object-relational mapper that we'll be using.  Before we jump into the challenges proper, we should take a look at this code base, familiarizing ourselves with the directory structure and what each part is doing.  This directory structure mimics the structures we'll see in our Phase 2 and 3 applications.
