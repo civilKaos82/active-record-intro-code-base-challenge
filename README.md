@@ -7,7 +7,7 @@ This challenge introduces the code base with which we'll be working as we become
 ### Environment Configuration
 Going forward, the setup of our applications will be a little more complex than it has been in previous challenges.  We're going to be more intentional about how we organize our files.  Also, we'll need to do some configuration (e.g., connecting to our database).  This code base—or skeleton—provides the configuration that we'll need to interact with a database using Active Record; however, we should understand what it's doing.
 
-The configuration of our application is done in the file `config/environment.rb`.  It requires all the gems and Ruby libraries that we'll be using.  It loads all of our model files and sets up the database connection.  Take some time to look through the code.  We'll probably find something new, like the [`Pathname`][Ruby Docs Pathname] and [`Dir`][Ruby Docs Dir] classes and the configuration of `ActiveRecord::Base` to connect with the database.  It's okay if not all of this makes perfect sense right now, but we should have the gist of what's happening ... if not exactly how.
+The configuration of our application is done in the file `config/environment.rb`.  It requires all the gems and Ruby libraries that we'll be using.  It loads all of our model files and sets up the database connection.  Take some time to look through the code.  We'll probably find something new, like the [`Pathname`][Ruby Docs Pathname] and [`Dir`][Ruby Docs Dir] classes and the configuration of `ApplicationRecord` to connect with the database.  It's okay if not all of this makes perfect sense right now, but we should have the gist of what's happening ... if not exactly how.
 
 
 ### Rakefile
@@ -153,11 +153,11 @@ We can open IRB with our environment loaded (see Figure 9).  We'll refer to this
 
   To sample what we can do from within the console, run ...
 
-  -  `ActiveRecord::Base.connection.tables`
+  -  `ApplicationRecord.connection.tables`
 
       This returns an array containing the names of the tables in our database.
 
-  -  `ActiveRecord::Base.connection.columns(:dogs)`
+  -  `ApplicationRecord.connection.columns(:dogs)`
 
       This returns an array of objects representing the columns in the `dogs` table—one object for each column.  The objects themselves happen to be instances of the `ActiveRecord::ConnectionAdapters::Column` class.
 
